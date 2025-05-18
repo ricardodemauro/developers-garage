@@ -6,9 +6,12 @@ import servicesData from '../data/services.json';
 function ServicePage() {
   const { serviceId } = useParams();
   
-  // Redirect to MailBin page if that service is selected
+  // Redirect to specific service pages
   if (serviceId === 'mailbin') {
     return <Navigate to="/mailbin" />;
+  }
+  if (serviceId === 'postbin') {
+    return <Navigate to="/postbin" />;
   }
 
   const service = servicesData.services.find(s => s.id === serviceId);
