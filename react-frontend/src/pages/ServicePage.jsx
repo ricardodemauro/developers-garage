@@ -16,6 +16,9 @@ function ServicePage() {
   if (serviceId === 'mocky') {
     return <Navigate to="/mocky" />;
   }
+  if (serviceId === 'password') {
+    return <Navigate to="/password" />;
+  }
 
   const service = servicesData.services.find(s => s.id === serviceId);
 

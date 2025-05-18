@@ -85,6 +85,15 @@
           "description": "Generate realistic US street addresses"
         }
       ]
+    },
+    {
+      "id": "password",
+      "title": "Password Generator",
+      "emoji": "🔑",
+      "description": "Generate secure, random passwords with configurable options for testing and security.",
+      "baseUrl": "password.devgarage.io",
+      "swaggerUrl": "/api/password/swagger",
+      "mcpConnectorUrl": "/api/password/mcp"
     }
   ]
 }
