@@ -7,6 +7,7 @@ import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import MailBinPage from './pages/MailBinPage';
 import PostBinPage from './pages/PostBinPage';
+import MockyHttpPage from './pages/MockyHttpPage';
 import NotFoundPage from './pages/NotFoundPage';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -19,6 +20,7 @@ function App() {
         <Route path="/service/:serviceId" element={<ServicePage />} />
         <Route path="/mailbin" element={<MailBinPage />} />
         <Route path="/postbin" element={<PostBinPage />} />
+        <Route path="/mocky" element={<MockyHttpPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="*" element={<NotFoundPage />} />

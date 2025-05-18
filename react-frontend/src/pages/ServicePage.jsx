@@ -13,6 +13,9 @@ function ServicePage() {
   if (serviceId === 'postbin') {
     return <Navigate to="/postbin" />;
   }
+  if (serviceId === 'mocky') {
+    return <Navigate to="/mocky" />;
+  }
 
   const service = servicesData.services.find(s => s.id === serviceId);
 
