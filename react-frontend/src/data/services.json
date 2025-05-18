@@ -27,6 +27,13 @@
       "emoji": "🔗",
       "description": "Test your webhook integrations with real-time request inspection.",
       "baseUrl": "hook.devgarage.io"
+    },
+    {
+      "id": "mocky",
+      "title": "Mocky HTTP",
+      "emoji": "🔄",
+      "description": "Create custom HTTP API mocks with configurable responses, methods, and status codes. Perfect for testing and development.",
+      "baseUrl": "mocky.devgarage.io"
     }
   ]
 }
