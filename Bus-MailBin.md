@@ -62,3 +62,32 @@ Received Emails:
 * Receives emails via SMTP server implementation.
 * Stores emails temporarily (24 hours TTL).
 * Provides API endpoint (`GET /api/mailbin/{id}/emails`) to fetch inbox content.
+
+### API Documentation
+
+* **Swagger API Documentation**
+  * Available at `https://mailbin.devgarage.io/api/mailbin/swagger`
+  * Interactive API documentation
+  * Includes all endpoints:
+    * `POST /api/inbox` - Create new disposable inbox
+    * `GET /api/inbox/{id}` - Get inbox details
+    * `GET /api/inbox/{id}/emails` - List all emails
+    * `GET /api/inbox/{id}/emails/{emailId}` - Get specific email
+    * `DELETE /api/inbox/{id}` - Delete inbox (manual cleanup)
+  * Request/response examples included
+  * Authentication requirements
+  * Rate limiting information
+
+### MCP (Model Context Protocol) Integration
+
+* **MCP Connector**
+  * Available at `https://mailbin.devgarage.io/api/mailbin/mcp`
+  * Enables AI agent integration with MailBin
+  * Capabilities:
+    * Create and manage disposable inboxes
+    * Monitor incoming emails
+    * Extract email content and attachments
+    * Perform automated email testing
+  * Built-in validation and error handling
+  * Secure authentication methods
+  * Usage examples and best practices
