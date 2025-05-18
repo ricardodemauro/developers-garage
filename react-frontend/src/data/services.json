@@ -1,0 +1,32 @@
+{
+  "services": [
+    {
+      "id": "mailbin",
+      "title": "MailBin",
+      "emoji": "📧",
+      "description": "Disposable email inbox for testing. Receive emails instantly without registration.",
+      "baseUrl": "mail.devgarage.io"
+    },
+    {
+      "id": "postbin",
+      "title": "PostBin",
+      "emoji": "📬",
+      "description": "Inspect HTTP requests. Perfect for webhook testing and API development.",
+      "baseUrl": "post.devgarage.io"
+    },
+    {
+      "id": "filebin",
+      "title": "FileBin",
+      "emoji": "📁",
+      "description": "Temporary file storage. Share files that auto-delete after 24 hours.",
+      "baseUrl": "file.devgarage.io"
+    },
+    {
+      "id": "webhook",
+      "title": "Webhook Tester",
+      "emoji": "🔗",
+      "description": "Test your webhook integrations with real-time request inspection.",
+      "baseUrl": "hook.devgarage.io"
+    }
+  ]
+}
