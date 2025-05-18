@@ -6,7 +6,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function DashboardPage() {
   return (
     <Container className="py-5">
-      <h1 className="mb-4">Developer Services Dashboard</h1>
       <Dashboard />
     </Container>
   );

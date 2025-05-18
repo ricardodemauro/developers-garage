@@ -5,35 +5,86 @@
       "title": "MailBin",
       "emoji": "📧",
       "description": "Disposable email inbox for testing. Receive emails instantly without registration.",
-      "baseUrl": "mail.devgarage.io"
+      "baseUrl": "mail.devgarage.io",
+      "swaggerUrl": "/api/mailbin/swagger",
+      "mcpConnectorUrl": "/api/mailbin/mcp"
     },
     {
       "id": "postbin",
       "title": "PostBin",
       "emoji": "📬",
       "description": "Inspect HTTP requests. Perfect for webhook testing and API development.",
-      "baseUrl": "post.devgarage.io"
+      "baseUrl": "post.devgarage.io",
+      "swaggerUrl": "/api/postbin/swagger",
+      "mcpConnectorUrl": "/api/postbin/mcp"
     },
     {
       "id": "filebin",
       "title": "FileBin",
       "emoji": "📁",
       "description": "Temporary file storage. Share files that auto-delete after 24 hours.",
-      "baseUrl": "file.devgarage.io"
+      "baseUrl": "file.devgarage.io",
+      "swaggerUrl": "/api/filebin/swagger",
+      "mcpConnectorUrl": "/api/filebin/mcp"
     },
     {
       "id": "webhook",
       "title": "Webhook Tester",
       "emoji": "🔗",
       "description": "Test your webhook integrations with real-time request inspection.",
-      "baseUrl": "hook.devgarage.io"
+      "baseUrl": "hook.devgarage.io",
+      "swaggerUrl": "/api/webhook/swagger",
+      "mcpConnectorUrl": "/api/webhook/mcp"
     },
     {
       "id": "mocky",
       "title": "Mocky HTTP",
       "emoji": "🔄",
       "description": "Create custom HTTP API mocks with configurable responses, methods, and status codes. Perfect for testing and development.",
-      "baseUrl": "mocky.devgarage.io"
+      "baseUrl": "mocky.devgarage.io",
+      "swaggerUrl": "/api/mocky/swagger",
+      "mcpConnectorUrl": "/api/mocky/mcp"
+    },
+    {
+      "id": "datagen",
+      "title": "Data Generator",
+      "emoji": "🎲",
+      "description": "Generate realistic test data including SSN, credit cards, routing numbers, and more.",
+      "baseUrl": "datagen.devgarage.io",
+      "swaggerUrl": "/api/datagen/swagger",
+      "mcpConnectorUrl": "/api/datagen/mcp",
+      "generators": [
+        {
+          "type": "ssn",
+          "name": "Social Security Number",
+          "description": "Generate valid format US Social Security Numbers"
+        },
+        {
+          "type": "creditcard",
+          "name": "Credit Card Numbers",
+          "description": "Generate valid credit card numbers for different providers (Visa, Mastercard, Amex)"
+        },
+        {
+          "type": "routing",
+          "name": "Bank Routing Numbers",
+          "description": "Generate valid US bank routing numbers"
+        },
+        {
+          "type": "ein",
+          "name": "Employer ID Numbers",
+          "description": "Generate valid US Employer Identification Numbers (EIN)"
+        },
+        {
+          "type": "phone",
+          "name": "Phone Numbers",
+          "description": "Generate phone numbers in various international formats"
+        },
+        {
+          "type": "address",
+          "name": "US Addresses",
+          "description": "Generate realistic US street addresses"
+        }
+      ]
     }
   ]
 }
