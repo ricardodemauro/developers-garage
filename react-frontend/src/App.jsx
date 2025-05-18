@@ -5,6 +5,7 @@ import DashboardPage from './pages/DashboardPage';
 import ServicePage from './pages/ServicePage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
+import MailBinPage from './pages/MailBinPage';
 import NotFoundPage from './pages/NotFoundPage';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<DashboardPage />} />
         <Route path="/service/:serviceId" element={<ServicePage />} />
+        <Route path="/mailbin" element={<MailBinPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="*" element={<NotFoundPage />} />
