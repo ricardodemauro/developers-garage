@@ -80,11 +80,163 @@ HTTP Headers:
 
 ---
 
-### Technical Implementation (future backend API concept)
+### Technical Implementation (backend API concept)
 
 * Backend generates unique endpoints upon request.
 * Stores custom JSON responses and HTTP headers temporarily (24-hour TTL).
 * API endpoints:
 
-  * `GET /api/mocky/{id}`: Returns stored JSON payload and headers.
-  * `POST /api/mocky/{id}`: Updates JSON payload and headers.
+  **Configuration Endpoints:**
+  * `POST /api/mocky-config`: Creates a new mock endpoint with a randomly generated ID and returns the endpoint ID and URL.
+  * `PUT /api/mocky-config/{id}`: Updates an existing mock endpoint's JSON payload and headers.
+  * `GET /api/mocky-config/{id}`: Returns the current configuration (JSON payload, headers, expiration time) for administration purposes.
+
+  **Mock Response Endpoints:**
+  * `GET /mocky/{id}`: Serves the mock response with the configured JSON and headers.
+  * Other HTTP methods (`POST`, `PUT`, `DELETE`, etc.) to `/mocky/{id}`: Optionally support different HTTP methods to the same endpoint.
+
+### API Payload Specifications
+
+#### 1. Create Mock Endpoint - `POST /api/mocky-config`
+
+**Request Payload:**
+```json
+{
+  "responseBody": {
+    "status": "success",
+    "message": "This is a mock response",
+    "data": {
+      "id": 12345,
+      "name": "Test User"
+    }
+  },
+  "headers": [
+    { "name": "Content-Type", "value": "application/json" },
+    { "name": "Cache-Control", "value": "no-cache" }
+  ],
+  "statusCode": 200
+}
+```
+
+**Response Payload:**
+```json
+{
+  "success": true,
+  "result": {
+    "id": "abc456",
+    "url": "https://devgarage.app/mocky/abc456",
+    "expiresAt": "2025-05-22T10:30:45Z",
+    "responseBody": {
+      "status": "success",
+      "message": "This is a mock response",
+      "data": {
+        "id": 12345,
+        "name": "Test User"
+      }
+    },
+    "headers": [
+      { "name": "Content-Type", "value": "application/json" },
+      { "name": "Cache-Control", "value": "no-cache" }
+    ],
+    "statusCode": 200
+  }
+}
+```
+
+#### 2. Update Mock Endpoint - `PUT /api/mocky-config/{id}`
+
+**Request Payload:**
+```json
+{
+  "responseBody": {
+    "status": "success",
+    "message": "Updated mock response",
+    "data": {
+      "id": 67890,
+      "name": "Updated User"
+    }
+  },
+  "headers": [
+    { "name": "Content-Type", "value": "application/json" },
+    { "name": "Cache-Control", "value": "no-cache" },
+    { "name": "X-Custom-Header", "value": "custom-value" }
+  ],
+  "statusCode": 200
+}
+```
+
+**Response Payload:**
+```json
+{
+  "success": true,
+  "result": {
+    "id": "abc456",
+    "url": "https://devgarage.app/mocky/abc456",
+    "expiresAt": "2025-05-22T10:30:45Z",
+    "responseBody": {
+      "status": "success",
+      "message": "Updated mock response",
+      "data": {
+        "id": 67890,
+        "name": "Updated User"
+      }
+    },
+    "headers": [
+      { "name": "Content-Type", "value": "application/json" },
+      { "name": "Cache-Control", "value": "no-cache" },
+      { "name": "X-Custom-Header", "value": "custom-value" }
+    ],
+    "statusCode": 200
+  }
+}
+```
+
+#### 3. Get Mock Configuration - `GET /api/mocky-config/{id}`
+
+**Response Payload:**
+```json
+{
+  "success": true,
+  "result": {
+    "id": "abc456",
+    "url": "https://devgarage.app/mocky/abc456",
+    "expiresAt": "2025-05-22T10:30:45Z",
+    "createdAt": "2025-05-21T10:30:45Z",
+    "responseBody": {
+      "status": "success",
+      "message": "This is a mock response",
+      "data": {
+        "id": 12345,
+        "name": "Test User"
+      }
+    },
+    "headers": [
+      { "name": "Content-Type", "value": "application/json" },
+      { "name": "Cache-Control", "value": "no-cache" }
+    ],
+    "statusCode": 200,
+    "timeRemaining": "23 hours 45 minutes"
+  }
+}
+```
+
+#### 4. Mock Response Endpoint - `GET /mocky/{id}` (and other HTTP methods)
+
+This endpoint will directly return:
+- The configured JSON payload as the response body
+- The configured HTTP status code (default: 200)
+- All configured custom headers
+
+#### Data Model for Storage
+
+Each mock endpoint configuration will be stored with the following structure:
+```json
+{
+  "id": "abc456",
+  "createdAt": "2025-05-21T10:30:45Z",
+  "expiresAt": "2025-05-22T10:30:45Z",
+  "responseBody": { ... },
+  "headers": [ ... ],
+  "statusCode": 200
+}
+```
