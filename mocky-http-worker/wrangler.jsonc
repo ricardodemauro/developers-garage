@@ -13,8 +13,8 @@
 	"kv_namespaces": [
 		{
 			"binding": "MOCKY_DATA",
-			"id": "xx-demo-id-xx",
-			"preview_id": "xx-demo-preview-id-xx"
+			"id": "garage_mocky_kv",
+			"preview_id": "garage_mocky_kv_preview"
 		}
 	]
 	/**
