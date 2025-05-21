@@ -85,8 +85,7 @@
           "description": "Generate realistic US street addresses"
         }
       ]
-    },
-    {
+    },    {
       "id": "password",
       "title": "Password Generator",
       "emoji": "🔑",
@@ -94,6 +93,15 @@
       "baseUrl": "password.devgarage.io",
       "swaggerUrl": "/api/password/swagger",
       "mcpConnectorUrl": "/api/password/mcp"
+    },
+    {
+      "id": "notepad",
+      "title": "Notepad",
+      "emoji": "📝",
+      "description": "Create, edit, and securely share Markdown notes and code snippets with optional password protection.",
+      "baseUrl": "notepad.devgarage.io",
+      "swaggerUrl": "/api/notepad/swagger",
+      "mcpConnectorUrl": "/api/notepad/mcp"
     }
   ]
 }

@@ -1,6 +1,6 @@
-## Feature Overview: Notepad Widget (Persistent Shared Notes with Optional Password)
+## Feature Overview: Notepad Widget (Persistent Shared Markdown Notes with Optional Password)
 
-The Notepad widget allows users to quickly create, edit, and securely share plaintext notes or code snippets. It's designed for seamless collaboration, idea sharing, or temporary document storage. Users have the flexibility of making notes public or password-protected, as well as optionally setting expiration dates.
+The Notepad widget allows users to quickly create, edit, and securely share Markdown-formatted notes or code snippets. It's designed for seamless collaboration, idea sharing, or temporary document storage. Users have the flexibility of making notes public or password-protected, as well as optionally setting expiration dates.
 
 ### User Workflow
 
